@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.yordizisa.nutriforge.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login">
+
+        <action
+            android:id="@+id/action_loginFragment_to_viewPagerFragment"
+            app:destination="@id/viewPagerFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.yordizisa.nutriforge.pagerMenu.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu">
+
+        <action
+            android:id="@+id/action_menuFragment_to_creditsFragment"
+            app:destination="@id/creditsFragment" />
+
+        <action
+            android:id="@+id/action_menuFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/creditsFragment"
+        android:name="com.yordizisa.nutriforge.CreditFragment"
+        android:label="fragment_credits"
+        tools:layout="@layout/fragment_credit">
+
+        <action
+            android:id="@+id/action_creditsFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/viewPagerFragment"
+        android:name="com.yordizisa.nutriforge.pager.ViewPagerFragment"
+        android:label="fragment_view_pager"
+        tools:layout="@layout/fragment_view_pager" >
+        <action
+            android:id="@+id/action_viewPagerFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+</navigation>

@@ -6,29 +6,22 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.yordizisa.nutriforge.databinding.ActivityMainBinding
+import com.yordizisa.nutriforge.databinding.FragmentLoginBinding
 
 class MainActivity : AppCompatActivity() {
-    @SuppressLint("MissingInflatedId")
+    private var _binding : ActivityMainBinding? = null
+    private val binding
+        get() = _binding!!
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-        val editText = findViewById<EditText>(R.id.editText)
-        val button1 = findViewById<Button>(R.id.button1)
-
-
-        // Set the welcome text, image, and other UI elements
-
-       button1.setOnClickListener {
-            val userName = editText.text.toString()
-
-           if (userName.isNotEmpty()) {
-               val intent = Intent(this, CreditActivity::class.java)
-               intent.putExtra("userName", userName)
-               startActivity(intent)
-           }else{
-               editText.error = "Inserta un nombre para continuar"
-           }
-        }
+        //setContentView(R.layout.activity_main)
+        _binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
     }
 }
