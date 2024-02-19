@@ -30,7 +30,7 @@
         android:layout_width="200dp"
         android:layout_height="50dp"
         tools:ignore="MissingConstraints"
-        android:text="Salir"
+        android:text="@string/salir"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

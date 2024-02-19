@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NutriForge</string>
+    <string name="descripcion">This app is designed to assist people who want to achieve a physical transformation or improve their health. Explore diets, workout routines, learn about nutrition, and much more!</string>
+    <string name="titulo">Welcome to NutriForge</string>
+    <string name="iniciar">Start</string>
+    <string name="hint">Username</string>
+    <string name="salir">Exit</string>
+    <string name="contactar">Contact</string>
+    <string name="lblnombre">Name: </string>
+    <string name="lbldescripcion">Description: </string>
+    <string name="btnfavoritos">Favourites </string>
+</resources>

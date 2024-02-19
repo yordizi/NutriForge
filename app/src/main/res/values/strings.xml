@@ -2,6 +2,13 @@
     <string name="app_name">NutriForge</string>
     <string name="descripcion">Esta app está diseñada para ayudar a las personas que quieran conseguir un cambio físico o mejorar su salud.
     Consulta dietas, rutinas, aprende de nutrición y mucho más!</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="titulo">Bienvenido a Nutriforge</string>
+    <string name="iniciar">Iniciar</string>
+    <string name="hint">Usuario</string>
+    <string name="salir">salir</string>
+    <string name="contactar">contactar</string>
+    <string name="lblnombre">Nombre: </string>
+    <string name="lbldescripcion">Descripcion: </string>
+    <string name="btnfavoritos">Favoritos</string>
+
 </resources>
