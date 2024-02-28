@@ -1,6 +1,7 @@
 package com.yordizisa.nutriforge.fragmentos
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,8 +33,12 @@ open class DietaListFragment : Fragment() {
         val listaDietas = DietaProvider.listaItem
         iniciarRecyclerView(listaDietas)
     }
+    override fun onResume() {
+        super.onResume()
+        iniciarRecyclerView(DietaProvider.listaItem)
+    }
 
-    protected fun iniciarRecyclerView(listaDietas: MutableList<Dieta>) {
+    protected open fun iniciarRecyclerView(listaDietas: MutableList<Dieta>) {
         val manager = LinearLayoutManager(requireActivity())
         binding.recyclerItem.layoutManager = manager
         binding.recyclerItem.adapter =
@@ -41,7 +46,9 @@ open class DietaListFragment : Fragment() {
     }
 
     private fun onItemSelected(dieta:Dieta) {
-
+       val bundle = Bundle()
+        bundle.putParcelable("dieta", dieta)
+        findNavController().navigate(R.id.action_menuFragment_to_detailDietaFragment, bundle)
     }
 }
 

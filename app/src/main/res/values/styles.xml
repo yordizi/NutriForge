@@ -1,32 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- res/values/styles.xml -->
+
+    <!-- Tema de la aplicación -->
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
-    <item name="colorPrimary">@color/material_dynamic_primary0</item>
-    <item name="colorSecondary">@color/material_dynamic_secondary0</item>
-    <item name="colorTertiary">@color/material_dynamic_tertiary0</item>
+        <item name="colorPrimary">@color/material_dynamic_primary0</item>
+        <item name="colorSecondary">@color/material_dynamic_secondary0</item>
+        <item name="colorTertiary">@color/material_dynamic_tertiary0</item>
     </style>
+
+    <!-- Estilo para el título personalizado -->
     <style name="CustomTitle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">30sp</item>
         <item name="android:gravity">center</item>
-        <item name="android:fontFamily">@font/press_start2p</item>
-        <item name="android:lineSpacingExtra">12sp</item>
+        <item name="android:fontFamily">@font/roboto_bold</item>
+        <item name="android:lineSpacingExtra">15sp</item> <!-- Ajustado el espaciado entre líneas -->
     </style>
-
-    <style name="CustomText">
-        <item name="android:textSize">24sp</item>
-        <item name="android:textStyle">bold</item>
-    </style>
-    <style name="CustomButton">
+    <style name="CustomTitle2">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">24sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:fontFamily">@font/roboto_bold</item>
+        <item name="android:lineSpacingExtra">15sp</item>
+    </style>
+
+    <!-- Estilo para el texto personalizado -->
+    <style name="CustomText">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">normal</item> <!-- Cambiado de "bold" a "normal" -->
+        <item name="android:fontFamily">@font/roboto_black</item>
+        <item name="android:lineSpacingExtra">15sp</item>
+    </style>
+
+    <!-- Estilo para el botón personalizado -->
+    <style name="CustomButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">25sp</item>
         <item name="android:textColor">#FFFFFF</item>
-        <item name="android:padding">12dp</item>
+        <item name="android:padding">16dp</item>
         <item name="android:layout_marginTop">16dp</item>
         <item name="android:layout_marginBottom">16dp</item>
-        <item name="android:fontFamily">@font/press_start2p</item>
+        <item name="android:fontFamily">@font/roboto_black</item>
+        <item name="android:backgroundTint">@color/md_theme_secondary_highContrast</item> <!-- Ajusta el color del botón -->
     </style>
+    <style name="CustomButton2">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:layout_marginBottom">16dp</item>
+        <item name="android:fontFamily">@font/roboto_black</item>
+        <item name="android:backgroundTint">@color/md_theme_error_highContrast</item> <!-- Ajusta el color del botón -->
+    </style>
+
 </resources>

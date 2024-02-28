@@ -29,6 +29,9 @@
         <action
             android:id="@+id/action_menuFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_detailDietaFragment"
+            app:destination="@id/detailDietaFragment" />
 
 
     </fragment>
@@ -53,4 +56,9 @@
             android:id="@+id/action_viewPagerFragment_to_menuFragment"
             app:destination="@id/menuFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/detailDietaFragment"
+        android:name="com.yordizisa.nutriforge.fragmentos.DetailDietaFragment"
+        android:label="fragment_detail_item"
+        tools:layout="@layout/fragment_detail_item" />
 </navigation>

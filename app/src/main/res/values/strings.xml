@@ -9,6 +9,7 @@
     <string name="contactar">contactar</string>
     <string name="lblnombre">Nombre: </string>
     <string name="lbldescripcion">Descripcion: </string>
-    <string name="btnfavoritos">Favoritos</string>
+    <string name="btnfavoritos">Favorito 🤍</string>
+    <string name="btnfavoritosQuitar">Quitar fav 💔</string>
 
 </resources>
