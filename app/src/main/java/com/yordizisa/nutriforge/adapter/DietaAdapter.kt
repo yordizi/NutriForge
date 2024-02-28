@@ -25,5 +25,13 @@ class DietaAdapter(
             onClickListener(foto)
         }
     }
+    fun updateItem(dieta: Dieta) {
+        val index = dietaLista.indexOf(dieta)
+        if (index != -1) {
+            dietaLista[index] = dieta
+            notifyItemChanged(index)
+
+        }
+    }
 }
 

@@ -8,6 +8,9 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.yordizisa.nutriforge.databinding.ActivityMainBinding
 import com.yordizisa.nutriforge.databinding.FragmentLoginBinding
@@ -19,9 +22,16 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //setContentView(R.layout.activity_main)
         _binding = ActivityMainBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
+        setContentView(binding.root)
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragment_container_view2) as NavHostFragment
+        val navController = navHostFragment.navController
+
+        setSupportActionBar(findViewById(R.id.toolbar))
+        NavigationUI.setupActionBarWithNavController(this,navController)
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = this.findNavController(R.id.fragment_container_view2)
+        return navController.navigateUp()
     }
 }

@@ -15,6 +15,7 @@ import com.yordizisa.nutriforge.modelos.DietaProvider
 class FavDietaListFragment : Fragment() {
 
     private lateinit var binding: FragmentFavItemListBinding
+    private lateinit var favDietaAdapter: DietaAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,11 +40,12 @@ class FavDietaListFragment : Fragment() {
         val favDietasCompletas = DietaProvider.listaItem.filter { dieta -> favDietaList.contains(dieta.id) }.toMutableList()
         val manager = LinearLayoutManager(requireActivity())
         binding.recyclerFavItem.layoutManager = manager
-        binding.recyclerFavItem.adapter = DietaAdapter(favDietasCompletas) { onFavItemSelected(it) }
+        favDietaAdapter = DietaAdapter(favDietasCompletas) { onFavItemSelected(it) }
+        binding.recyclerFavItem.adapter = favDietaAdapter
     }
 
     private fun onFavItemSelected(dieta: Dieta) {
-
+        favDietaAdapter.updateItem(dieta)
     }
 
     private fun obtenerDietasFavoritas(): MutableList<Int> {

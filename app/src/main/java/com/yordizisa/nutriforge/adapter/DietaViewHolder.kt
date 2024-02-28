@@ -19,13 +19,8 @@ class DietaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         binding.tv1.text = itemModel.nombre
         binding.tv2.text = itemModel.descripcion
         Glide.with(binding.ivItem.context).load(itemModel.foto).into(binding.ivItem)
+        actualizarBoton(itemModel.id)
 
-        if (DietaProvider.favDietaList.contains(itemModel.id)) {
-            binding.btnFav.text = itemView.context.getString(R.string.btnfavoritosQuitar)
-           }
-            else{
-            binding.btnFav.text = itemView.context.getString(R.string.btnfavoritos)
-            }
         binding.btnFav.setOnClickListener {
             val isFav = DietaProvider.favDietaList.contains(itemModel.id)
 
@@ -39,6 +34,14 @@ class DietaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
                 DietaProvider.favDietaList.add(itemModel.id)
                 Toast.makeText(itemView.context, "Dieta agregada a favoritos", Toast.LENGTH_SHORT).show()
             }
+        }
+    }
+    fun actualizarBoton(id:Int){
+        if (DietaProvider.favDietaList.contains(id)) {
+            binding.btnFav.text = itemView.context.getString(R.string.btnfavoritosQuitar)
+        }
+        else{
+            binding.btnFav.text = itemView.context.getString(R.string.btnfavoritos)
         }
     }
 }

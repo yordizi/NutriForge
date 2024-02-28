@@ -19,6 +19,7 @@ open class DietaListFragment : Fragment() {
 
 
     private lateinit var binding: FragmentItemListBinding
+    private lateinit var dietaAdapter: DietaAdapter // Asegúrate de declararla aquí
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,20 +34,16 @@ open class DietaListFragment : Fragment() {
         val listaDietas = DietaProvider.listaItem
         iniciarRecyclerView(listaDietas)
     }
-    override fun onResume() {
-        super.onResume()
-        iniciarRecyclerView(DietaProvider.listaItem)
-    }
-
     protected open fun iniciarRecyclerView(listaDietas: MutableList<Dieta>) {
         val manager = LinearLayoutManager(requireActivity())
         binding.recyclerItem.layoutManager = manager
-        binding.recyclerItem.adapter =
-            DietaAdapter(listaDietas) { onItemSelected(it) }
+       dietaAdapter = DietaAdapter(listaDietas) { onItemSelected(it) }
+       binding.recyclerItem.adapter = dietaAdapter
     }
 
     private fun onItemSelected(dieta:Dieta) {
-       val bundle = Bundle()
+        dietaAdapter.updateItem(dieta)
+        val bundle = Bundle()
         bundle.putParcelable("dieta", dieta)
         findNavController().navigate(R.id.action_menuFragment_to_detailDietaFragment, bundle)
     }
